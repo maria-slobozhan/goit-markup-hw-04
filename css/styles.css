@@ -41,9 +41,10 @@ p {
   color: inherit;
 }
 .list {
-  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
   padding-left: 0;
-  margin: 0;
+  list-style: none;
 }
 
 img {
@@ -135,17 +136,16 @@ img {
 .header .link:hover,
 .header .link:focus {
   color: var(--accent-color);
-  fill: var(--accent-color);
-}
-
-.contact-link:focus,
-.contact-link:hover {
-  fill: var(--accent-color);
 }
 
 .contact-link {
   display: flex;
   align-items: center;
+}
+
+.contact-link:focus,
+.contact-link:hover {
+  fill: var(--accent-color);
 }
 
 /* Герой */
@@ -301,27 +301,31 @@ img {
 }
 
 .social-list {
-  display: flex;
-  list-style: none;
-  padding: 0px;
-  text-align: center;
-  margin-left: 32px;
-  margin-right: 32px;
+  display: inline-flex;
   margin-top: 16px;
-  margin-bottom: 30px;
 }
 
-.social-list .social-item:not(:last-child) {
-  margin-right: 10px;
+.social-item + .social-item {
+  margin-left: 10px;
 }
 
 .social-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 44px;
   width: 44px;
-  padding: 12px;
   border-radius: 50%;
+  background-color: #fff;
+}
+
+.social-icon {
   fill: var(--icon-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--hero-text-color);
 }
 
 /* Клиенты */
@@ -329,23 +333,26 @@ img {
 .clients-list {
   display: flex;
   align-items: center;
+  margin-left: -30px;
 }
 
-.clients-list .clients-item:not(:last-child) {
-  margin-right: 30px;
+.clients-list .clients-item {
+  margin-left: 30px;
+}
+.clients-list .clients-item {
+  flex-basis: calc(100% / 6 - 30px);
 }
 
 .clients-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
   height: 90px;
   fill: var(--icon-color);
 }
 
 .clients-link:hover,
-.client-link:focus {
+.clients-link:focus {
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -431,8 +438,15 @@ img {
   display: flex;
 }
 
-.footer-content .contact-list {
+.footer-content .block {
+  flex-basis: calc(100% / 4 - 70px);
+}
+
+.footer-content .block:not(:last-child) {
   margin-right: 70px;
+}
+
+.footer-content .contact-list {
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -449,7 +463,6 @@ img {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
-  fill: var(--hero-text-color);
 }
 
 .social-title {
