@@ -217,13 +217,20 @@ img {
 }
 
 .features-icon {
+  display: flex;
   width: inherit;
   height: 120px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   background-color: var(--team-bg-color);
 }
+
+.features-icon .icon {
+  width: 70px;
+  height: 70px;
+}
+
 .features-header {
   margin-bottom: 10px;
   font-size: 14px;
